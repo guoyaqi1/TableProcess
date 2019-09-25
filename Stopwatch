@@ -1,0 +1,29 @@
+//StringBulider是个动态对象，可直接拼加上字符串；而string对象的步骤：先初始化对象并赋值，而在拼加字符串时，先要创建
+//需要拼加的字符串对象，然后再拼加。所以这就是stringBuilder远比string效率高的原因。
+public class Stopwatch {
+
+	private String ElapsedMilliseconds;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Stopwatch watch=new Stopwatch();
+       watch.Start();
+       StringBuilder str =new StringBuilder();
+       //string str="";
+       for(int i=0;i<100000;i++) {
+    	   //str+=i.Tostring();
+    	   str.append(str);
+       }
+       watch.Stop();
+       
+       Stopwatch watch=new Stopwatch();
+       Swatch.Start();
+       String str1="";
+       for(int i=0;i<100000;i++) {
+    	   str1+=i.Tostring();
+       }
+       Swatch.Stop();
+       Console.WriteLine(Swatch.ElapsedMilliseconds);
+       Console.WriteLine(watch.ElapsedMilliseconds);
+       Console.ReadKey();
+	}
